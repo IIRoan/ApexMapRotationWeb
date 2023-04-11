@@ -1,0 +1,40 @@
+@import "../global.scss";
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  color: $white;
+
+  .logo {
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-left: 30px;
+  }
+
+  .logo img {
+    width: 80px;
+    height: 80px;
+  }
+
+  ul {
+    display: flex;
+    list-style-type: none;
+  }
+
+  li {
+    margin-right: 30px;
+  }
+
+  li a {
+    color: $white;
+    text-decoration: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-size: 35px;
+  }
+}
