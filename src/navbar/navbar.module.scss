@@ -37,4 +37,8 @@ nav {
     letter-spacing: 2px;
     font-size: 35px;
   }
+
+  li a :hover{
+    color: $yellow;
+  }
 }
