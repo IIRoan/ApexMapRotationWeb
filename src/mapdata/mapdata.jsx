@@ -35,13 +35,13 @@ function MapPage() {
     const Completionist = () => window.location.reload(false);
 
     // Renderer callback with condition
-    const renderer = ({minutes, seconds, completed}) => {
+    const renderer = ({hours, minutes, seconds, completed}) => {
         if (completed) {
             // Reload page for new map
             return <Completionist/>;
         } else {
             // Render a countdown
-            return <span>{zeroPad(minutes)}:{zeroPad(seconds)}</span>;
+            return <span>{zeroPad(hours)}:{zeroPad(minutes)}:{zeroPad(seconds)}</span>;
         }
     };
 
@@ -71,7 +71,7 @@ function MapPage() {
                                             renderer={renderer}
                                         />
                                     </h2>
-                                    <h2>Next ranked map: <br/>{mapRotation.battle_royale.next.map}</h2>
+                                    <h2>Next normals map: <br/>{mapRotation.battle_royale.next.map}</h2>
                                     <button className={styles.rotation_button} onClick={() => setRanked(!isRanked)}>
                                         <img alt={"Nessie!"} src={nessie_icon}/>
                                         <a> {isRanked ? 'Show Normals' : 'Ranked'} </a>
@@ -96,10 +96,10 @@ function MapPage() {
                                             renderer={renderer}
                                         />
                                     </h2>
-                                    <h2>Next map: <br/>{mapRotation.ranked.next.map}</h2>
+                                    <h2>Next ranked map: <br/>{mapRotation.ranked.next.map}</h2>
                                     <button className={styles.rotation_button} onClick={() => setRanked(!isRanked)}>
                                         <img alt={"Nessie!"} src={nessie_icon}/>
-                                        <a> {isRanked ? 'Show Normals' : 'Show  Ranked'} </a>
+                                        <a> {isRanked ? 'Show Normals' : 'Show Normals'} </a>
                                     </button>
                                 </div>
                             </div>
