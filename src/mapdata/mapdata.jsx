@@ -4,13 +4,14 @@ import axios from "axios";
 import Countdown from 'react-countdown';
 import {zeroPad} from "react-countdown";
 import nessie_icon from './nessie.ico'
+import heart from './heart.png'
 
 const AL_API_KEY = import.meta.env.VITE_ALAPIKEY;
 
 
 function MapPage() {
 
-
+    const [hover, setHover] = useState(false);
     const [mapRotation, setMapRotation] = useState([]);
     const [isLoading, setIsLoading] = useState(true);
     const [setError] = useState(false);
@@ -45,6 +46,7 @@ function MapPage() {
         }
     };
 
+
     return (
 
         <div>
@@ -72,9 +74,10 @@ function MapPage() {
                                         />
                                     </h2>
                                     <h2>Next normals map: <br/>{mapRotation.battle_royale.next.map}</h2>
-                                    <button className={styles.rotation_button} onClick={() => setRanked(!isRanked)}>
-                                        <img alt={"Nessie!"} src={nessie_icon}/>
-                                        <a> {isRanked ? 'Show Normals' : 'Ranked'} </a>
+                                    <button className={styles.rotation_button}  onClick={() => setRanked(!isRanked)}>
+                                        <img alt={"Nessie!"} src={nessie_icon} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}/>
+                                        {hover && <img className={styles.hearticon} src={heart}/>}
+                                        <a> {isRanked ? 'Show Ranked' : 'Show Ranked'} </a>
                                     </button>
                                 </div>
                             </div>
@@ -98,7 +101,8 @@ function MapPage() {
                                     </h2>
                                     <h2>Next ranked map: <br/>{mapRotation.ranked.next.map}</h2>
                                     <button className={styles.rotation_button} onClick={() => setRanked(!isRanked)}>
-                                        <img alt={"Nessie!"} src={nessie_icon}/>
+                                    <img alt={"Nessie!"} src={nessie_icon} onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}/>
+                                        {hover && <img className={styles.hearticon} src={heart}/>}
                                         <a> {isRanked ? 'Show Normals' : 'Show Normals'} </a>
                                     </button>
                                 </div>

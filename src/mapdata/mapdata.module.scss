@@ -42,9 +42,9 @@ body {
 
 
 .rotation_button {
-  background-color: $yellow; /* Yellow background */
-  border: none; /* Remove borders */
-  color: black; /* Black text */
+  background-color: transparent;
+  border: 2px solid $yellow;
+  color: $yellow;
   padding: 15px 25px; /* Some padding */
   font-size: 16px; /* Set a font size */
   cursor: pointer; /* Mouse pointer on hover */
@@ -52,6 +52,46 @@ body {
   align-items: center;
   margin: 60px auto auto;
   border-radius: 15px;
+  
+  
+}
+
+.hearticon{
+  position: fixed;
+  margin-bottom: 45px;
+  margin-left: 4px;
+  -moz-user-select: none;
+  -webkit-user-select: none;
+  user-select: none;
+  animation: heartbeat 2s infinite;
+}
+
+@keyframes heartbeat
+{
+  0%
+  {
+    transform: scale( .75 );
+  }
+  20%
+  {
+    transform: scale( 1 );
+  }
+  40%
+  {
+    transform: scale( .75 );
+  }
+  60%
+  {
+    transform: scale( 1 );
+  }
+  80%
+  {
+    transform: scale( .75 );
+  }
+  100%
+  {
+    transform: scale( .75 );
+  }
 }
 
 .rotation_button a {
@@ -60,12 +100,20 @@ body {
   font-size: 20px;
 }
 
+
 .rotation_button img {
   width: 22px; /* Adjust as needed */
   height: 22px; /* Adjust as needed */
   margin-right: 10px; /* Add some space between the image and the text */
   display: inline-block; /* Use inline-block layout */
 }
+
+
+.rotation_button img:hover  { 
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
+
 
 @media screen and (max-width: 599px), screen and (min-width: 600px) and (max-width: 959px) {
 
