@@ -100,22 +100,31 @@ body {
   font-size: 20px;
 }
 
+/* Nessie image in button */
 
 .rotation_button img {
-  width: 22px; /* Adjust as needed */
-  height: 22px; /* Adjust as needed */
-  margin-right: 10px; /* Add some space between the image and the text */
-  display: inline-block; /* Use inline-block layout */
+  width: 22px; 
+  height: 22px; 
+  margin-right: 10px; 
+  display: inline-block;
 }
 
+  /* rotates nessie in button when hoverd */
 
 .rotation_button img:hover  { 
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
+  transition: transform .2s ease-in-out;
 }
 
+.rotation_button img:not(:hover){
+  transition: transform .2s ease-in-out;
+  transform-origin: center;
+}
 
 @media screen and (max-width: 599px), screen and (min-width: 600px) and (max-width: 959px) {
+
+  /* Mobile Support */
 
 
   .current_map_header {
@@ -138,6 +147,8 @@ body {
 
   }
 
+
+  /* Makes Nessie image in button disapera on mobile  */
   .rotation_button img {
     display: none;
   }
