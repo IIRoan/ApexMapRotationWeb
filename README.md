@@ -1,5 +1,6 @@
 # ApexMapRotationWeb
 A simple website made with  Vite.JS to show the current normal and ranked map rotation of Apex Legends
+![AL-example](https://github.com/IIRoan/ApexMapRotationWeb/assets/82589897/174d5319-d6c4-4e3c-8663-512b4bc5a9a9)
 
 You can check it out [here](https://apex.roan.dev/).
 
