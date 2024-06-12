@@ -1,16 +1,12 @@
 @import "../global.scss";
 
-
 * {
-  font-family: Arvo;
-
+  font-family: 'Roboto', sans-serif;
 }
 
 body {
   overflow: hidden;
-
 }
-
 
 .div1 img {
   width: auto;
@@ -31,32 +27,36 @@ body {
   width: 40%;
   color: white;
   text-align: center;
-
 }
 
 .current_map_header {
   color: $yellow;
   font-size: 5rem;
   margin: 0 auto 1rem;
+  font-weight: 700;
 }
 
+.timer {
+  font-size: 3rem;
+  color: $yellow;
+  margin: 1rem 0;
+  font-weight: 500;
+}
 
 .rotation_button {
   background-color: transparent;
   border: 2px solid $yellow;
   color: $yellow;
-  padding: 15px 25px; /* Some padding */
-  font-size: 16px; /* Set a font size */
-  cursor: pointer; /* Mouse pointer on hover */
+  padding: 15px 25px;
+  font-size: 16px;
+  cursor: pointer;
   display: flex;
   align-items: center;
   margin: 60px auto auto;
   border-radius: 15px;
-  
-  
 }
 
-.hearticon{
+.hearticon {
   position: fixed;
   margin-bottom: 45px;
   margin-left: 4px;
@@ -66,69 +66,57 @@ body {
   animation: heartbeat 2s infinite;
 }
 
-@keyframes heartbeat
-{
-  0%
-  {
-    transform: scale( .75 );
+@keyframes heartbeat {
+  0% {
+    transform: scale(0.75);
   }
-  20%
-  {
-    transform: scale( 1 );
+  20% {
+    transform: scale(1);
   }
-  40%
-  {
-    transform: scale( .75 );
+  40% {
+    transform: scale(0.75);
   }
-  60%
-  {
-    transform: scale( 1 );
+  60% {
+    transform: scale(1);
   }
-  80%
-  {
-    transform: scale( .75 );
+  80% {
+    transform: scale(0.75);
   }
-  100%
-  {
-    transform: scale( .75 );
+  100% {
+    transform: scale(0.75);
   }
 }
 
 .rotation_button a {
-  display: inline-block; /* Use inline-block layout */
-  vertical-align: middle; /* Align vertically with the image */
+  display: inline-block;
+  vertical-align: middle;
   font-size: 20px;
 }
 
 /* Nessie image in button */
-
 .rotation_button img {
-  width: 22px; 
-  height: 22px; 
-  margin-right: 10px; 
+  width: 22px;
+  height: 22px;
+  margin-right: 10px;
   display: inline-block;
 }
 
-  /* rotates nessie in button when hoverd */
-
-.rotation_button img:hover  { 
+/* rotates nessie in button when hovered */
+.rotation_button img:hover {
   -webkit-transform: scaleX(-1);
   transform: scaleX(-1);
-  transition: transform .2s ease-in-out;
+  transition: transform 0.2s ease-in-out;
 }
 
-.rotation_button img:not(:hover){
-  transition: transform .2s ease-in-out;
+.rotation_button img:not(:hover) {
+  transition: transform 0.2s ease-in-out;
   transform-origin: center;
 }
 
 @media screen and (max-width: 599px), screen and (min-width: 600px) and (max-width: 959px) {
-
   /* Mobile Support */
-
-
   .current_map_header {
-    font-size: calc(3rem + .5vw);
+    font-size: calc(3rem + 0.5vw);
     font-weight: bolder;
   }
 
@@ -142,13 +130,11 @@ body {
   }
 
   .div2 {
-    width: 40%;
+    width: 80%;
     font-size: 20px;
-
   }
 
-
-  /* Makes Nessie image in button disapera on mobile  */
+  /* Makes Nessie image in button disappear on mobile */
   .rotation_button img {
     display: none;
   }
